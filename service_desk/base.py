@@ -6,4 +6,4 @@ engine = create_engine('sqlite:///:memory:')
 # engine = create_engine('postgresql://usr:pass@localhost:5432/servicedesk')
 Session = sessionmaker(bind=engine)
 
-Base = declarative_base()
+Base = declarative_base(bind=engine)

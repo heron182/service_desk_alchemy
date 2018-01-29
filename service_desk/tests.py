@@ -11,10 +11,11 @@ from .team import Team
 
 @pytest.fixture(scope='module')
 def session():
-    Base.metadata.create_all(engine)
+    Base.metadata.create_all()
     session = Session()
     yield session
-    session.close()
+    session.commit()
+    Base.metadata.drop_all()
 
 
 def test_can_save_analyst_to_db(session):
