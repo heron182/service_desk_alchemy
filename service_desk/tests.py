@@ -15,6 +15,7 @@ def session():
     session = Session()
     yield session
     session.commit()
+    session.close()
     Base.metadata.drop_all()
 
 

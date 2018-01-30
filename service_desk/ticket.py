@@ -27,3 +27,6 @@ class Ticket(Base):
         self.finished_at = finished_at
         self.problem = problem
         self.analyst = analyst
+
+    def __repr__(self):
+        return f'ID:{self.id} finished_at:{self.finished_at} by {self.analyst}'

@@ -17,3 +17,6 @@ class Problem(Base):
         self.description = description
         self.date_added = date_added
         self.analyst = analyst
+
+    def __repr__(self):
+        return f'ID: {self.id} - {self.description}'
